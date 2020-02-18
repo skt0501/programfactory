@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!-- Template by Quackit.com -->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Program Factory</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shCore.js" integrity="sha256-WEom85zvLbJF9B1Pa449D336xcBvD0VKSd+5T2+xUXs=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushJava.js" integrity="sha256-KcXztEV3gKUIR4BKF9xpBrEfXcDsx4+UPXpIhpAnfPM=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/scripts/shBrushXml.js" integrity="sha256-+x/kmpBKT9o+2C0viASLKuiMIXmAtr8hY8B/BIZjtD4=" crossorigin="anonymous"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shCore.css" integrity="sha256-/fqsgAeZFRun+l/2mXiSBw9jGPWMxh/ynPGWIfjJsrg=" crossorigin="anonymous" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/SyntaxHighlighter/3.0.83/styles/shThemeDefault.css" integrity="sha256-lxjGj2Y8/c72biuRkX5G47g+MclpGi/2WPm9Vcc7xkk=" crossorigin="anonymous" />
+
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="custom.css" rel="stylesheet">
+
+    <!-- Custom CSS: You can use this stylesheet to override any Bootstrap styles and/or apply your own styles -->
+    <link href="/css/custom.css" rel="stylesheet">
+<link href="/css/home.css" rel="stylesheet">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Logo and responsive toggle -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="div_logo">
+                <a class="" href="#" style="text-decoration: none;color:darkgrey">
+                	<!--<span class="glyphicon glyphicon-fire"></span> -->
+                <table style="width:300px"><tr><td><img id="logo" src="/img/logo.png" alt=""/></td>
+                <td>Program Factory<br>Manufacturing Unit of programs</td></tr>
+                </table></a></div>
+            </div>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <li>
+                        <a href="#">Services</a>
+                    </li>
+                    <li class="active">
+                        <a href="#">Programs</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+	
+	
+	
+	<div class="container">
+
+        <!-- Heading -->
+        <div class="row" >
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    <small>Check internet connection in android</small>
+                </h1>
+            </div>
+        </div>
+		
+		<p>Checking internet connection before hitting an API helps to reduce any exceptions in the project. This article provide a simple function to check same.</p>
+		<pre>
+
+private boolean haveNetworkConnection() {
+    boolean haveConnectedWifi = false;
+    boolean haveConnectedMobile = false;
+
+    ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+    NetworkInfo[] netInfo = cm.getAllNetworkInfo();
+    for (NetworkInfo ni : netInfo) {
+        if (ni.getTypeName().equalsIgnoreCase("WIFI"))
+            if (ni.isConnected())
+                haveConnectedWifi = true;
+        if (ni.getTypeName().equalsIgnoreCase("MOBILE"))
+            if (ni.isConnected())
+                haveConnectedMobile = true;
+    }
+    return haveConnectedWifi || haveConnectedMobile;
+}
+		    
+		</pre>
+		<p>Add below code to manifest.xml file</p>
+	<pre>
+
+		    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" ></uses-permission>
+		    </pre>
+		
+		
+		</div>
+		
+		<script src="/js/jquery-1.11.3.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="/js/bootstrap.min.js"></script>
+    
+    <!-- Home JS -->
+    <script src="/js/home.js" ></script>
+	
+
+	
+		</body></html>
